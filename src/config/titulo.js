@@ -1,1 +1,1 @@
-module.exports = 'Conceptos básicos e historia del diseño'
+module.exports = 'Construcción interfaz front-end y despliegue con React.js'

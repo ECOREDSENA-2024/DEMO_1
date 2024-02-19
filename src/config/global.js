@@ -1,11 +1,25 @@
 export default {
   global: {
-    componenteFormativo: 'Conceptos básicos e historia del diseño',
+    componenteFormativo:
+      'Construcción interfaz <i>front-end</i> y despliegue con React.js',
     descripcionCurso:
-      'En un sentido amplio, el arte hace referencia a cualquier actividad que desarrolla el ser humano y que recurre a emociones y al intelecto para crear obras con características estéticas y que se expresan en un lenguaje universal. De allí nacen los primeros elementos de la bocetación, que, junto con el color, juega un papel importante en el diseño y la comunicación visual. ',
-    imagenBannerPrincipal: require('@/assets/curso/banner-princiapal.png'),
-    fondoBannerPrincipal: require('@/assets/curso/fondo-banner-principal.png'),
-    fondoBannerInterno: require('@/assets/curso/interno.png'),
+      'Poder realizar una interfaz web con React.js, ofrece grandes beneficios en cuanto a funcionalidad y rapidez en el servicio web, es una herramienta tecnológica que ayuda y simplifica el escribir código y se integra muy bien con los servicios de JavaScript.',
+    imagenBannerPrincipal: require('@/assets/curso/portada/banner-princiapal.png'),
+    fondoBannerPrincipal: require('@/assets/curso/portada/fondo-banner-principal.png'),
+    imagenesDecorativasBanner: [
+      {
+        clases: ['banner-principal-decorativo-1', 'd-none', 'd-lg-block'],
+        imagen: require('@/assets/curso/portada/1.png'),
+      },
+      {
+        clases: ['banner-principal-decorativo-2'],
+        imagen: require('@/assets/curso/portada/2.png'),
+      },
+      {
+        clases: ['banner-principal-decorativo-3'],
+        imagen: require('@/assets/curso/portada/3.png'),
+      },
+    ],
   },
   menuPrincipal: {
     menu: [
@@ -16,93 +30,43 @@ export default {
       },
       {
         nombreRuta: 'introduccion',
-        icono: 'fas fa-info',
+        icono: 'fas fa-info-circle',
         titulo: 'Introducción',
         desarrolloContenidos: true,
       },
       {
         nombreRuta: 'tema1',
-        icono: 'far fa-file-alt',
         numero: '1',
-        titulo: 'Definición e historia del diseño gráfico',
+        titulo: '<i>Front-end</i>',
         desarrolloContenidos: true,
-        subMenu: [
-          {
-            icono: 'far fa-file-alt',
-            numero: '1.1',
-            titulo: 'Arte vs. diseño',
-            hash: 't_1_1',
-          },
-          {
-            icono: 'far fa-file-alt',
-            numero: '1.2',
-            titulo: 'Historia del arte',
-            hash: 't_1_2',
-          },
-          {
-            icono: 'far fa-file-alt',
-            numero: '1.3',
-            titulo: 'Exponentes, movimientos y tendencias del diseño',
-            hash: 't_1_3',
-          },
-          {
-            icono: 'Diseño básico',
-            numero: '1.4',
-            titulo: 'Diseño básico',
-            hash: 't_1_4',
-          },
-        ],
       },
+
       {
         nombreRuta: 'tema2',
-        icono: 'far fa-file-alt',
         numero: '2',
-        titulo: 'Teoría del color',
+        titulo: 'Herramientas de desarrollo web',
         desarrolloContenidos: true,
-        subMenu: [
-          {
-            icono: 'far fa-file-alt',
-            numero: '2.1',
-            titulo: 'Definición y fundamentos',
-            hash: 't_2_1',
-          },
-          {
-            icono: 'far fa-file-alt',
-            numero: '2.2',
-            titulo: 'Teoría aditiva y sustractiva',
-            hash: 't_2_2',
-          },
-          {
-            icono: 'far fa-file-alt',
-            numero: '2.3',
-            titulo: 'Psicología y armonías de color',
-            hash: 't_2_3',
-          },
-        ],
       },
       {
         nombreRuta: 'tema3',
-        icono: 'far fa-file-alt',
         numero: '3',
-        titulo: 'Bocetación ',
+        titulo: 'Construcción web con React',
         desarrolloContenidos: true,
-        subMenu: [
-          {
-            icono: 'far fa-file-alt',
-            numero: '3.1',
-            titulo: 'Definición y tipos',
-            hash: 't_3_1',
-          },
-          {
-            icono: 'far fa-file-alt',
-            numero: '3.2',
-            titulo: 'Técnicas, la bitácora y recursos gráficos ',
-            hash: 't_3_2',
-          },
-        ],
+      },
+      {
+        nombreRuta: 'tema4',
+        numero: '4',
+        titulo: 'Sitio web, <i>hosting</i> y dominio',
+        desarrolloContenidos: true,
       },
     ],
     subMenu: [
+      {
+        icono: 'fas fa-sitemap',
+        titulo: 'Síntesis',
+        nombreRuta: 'sintesis',
+        desarrolloContenidos: true,
+      },
       {
         nombreRuta: 'actividad',
         icono: 'far fa-question-circle',
@@ -115,368 +79,246 @@ export default {
         titulo: 'Glosario',
       },
       {
+        nombreRuta: 'complementario',
+        icono: 'far fa-folder-open',
+        titulo: 'Material complementario',
+      },
+      {
         icono: 'fas fa-book',
         titulo: 'Referencias bibliográficas',
         nombreRuta: 'referencias',
+      },
+      {
+        icono: 'fas fa-file-pdf',
+        titulo: 'Descargar PDF',
+        download: 'downloads/CF01_22810050_DU.pdf',
       },
       {
         icono: 'fas fa-download',
         titulo: 'Descargar material',
         download: 'downloads/material.zip',
       },
+      {
+        icono: 'far fa-registered',
+        titulo: 'Créditos',
+        nombreRuta: 'creditos',
+      },
     ],
   },
-  referencias: [
+  complementario: [
     {
+      tema: '1. <i>Front-end</i>',
       referencia:
-        'Antica-editions (s.f.). Par le paquebot L Atlantique [Figura]. ',
-      link:
-        'https://www.antica-editions.com/fr/index.php?id_product=166&controller=product',
+        'Platzi. (2021). <i>Qué es Frontend y Backend</i>. [Video]. YouTube.',
+      tipo: 'Video',
+      link: 'https://www.youtube.com/watch?v=s95S1_vP-dQ',
     },
     {
+      tema: '2. Herramientas de desarrollo web',
+      referencia: 'Visual Studio Code. (2022). <i>Code Editing. Redefined</i>.',
+      tipo: 'Sitio web',
+      link: 'https://code.visualstudio.com/',
+    },
+    {
+      tema: '2. Herramientas de desarrollo web',
+      referencia: 'Node.js. (2022). <i>Descarga | Node.js</i>.',
+      tipo: 'Sitio web',
+      link: 'https://nodejs.org/en',
+    },
+    {
+      tema: '2. Herramientas de desarrollo web',
       referencia:
-        'APA Diseño gráfico. (s. f.). La forma y los elementos conceptuales del diseño. ',
-      link:
-        'https://www.apadisenografico.com/la-forma-elemento-conceptual-del-diseno/',
+        'React. (2022). A <i>JavaScript library for building user interfaces</i>.',
+      tipo: 'Sitio web',
+      link: 'https://reactjs.org/',
     },
     {
+      tema: '4. Sitio web, <i>Hosting</i> y Dominio',
       referencia:
-        'BM Imaginería Taller de Arte. (2013). Historia del Arte Universal Cap 01 [Video]. YouTube. ',
-      link: 'https://www.youtube.com/watch?v=I7gIIby02aw&t=8s',
-    },
-    {
-      referencia:
-        'Cartwright, M. (2014). La piedra de Rosetta. World History Encyclopedia. ',
-      link: 'https://www.ancient.eu/trans/es/1-12408/la-piedra-de-rosetta/',
-    },
-    {
-      referencia:
-        'Castro, J. (2014). Urbanismo y arquitectura de Egipto. Slideshare. ',
-      link:
-        'https://es.slideshare.net/jonathan823/urbanismo-y-arquitectura-de-egipto',
-    },
-    {
-      referencia:
-        'Díez, G y Parra, R. (2015). Mucho más sobre la Bauhaus. Issuu.',
-      link: 'https://issuu.com/gabrieladiez/docs/bauhause',
-    },
-    {
-      referencia: 'EcuRed (s. f.). Saul Bass. [Figura].',
-      link: 'https://www.ecured.cu/Saul_Bass',
-    },
-    {
-      referencia:
-        'Enciclopedia Libre Universal en Español. (2010). Arte del antiguo Egipto. ',
-      link: 'http://enciclopedia.us.es/index.php/Arte_del_Antiguo_Egipto',
-    },
-    {
-      referencia: 'Etimologías de Chile. (2020). Etimología de imagen.',
-      link: 'http://etimologias.dechile.net/?imagen',
-    },
-    {
-      referencia:
-        'GCFAprendeLibre. (2019). Fundamentos del diseño: elementos básicos | Conceptos básicos de diseño gráfico [Video]. YouTube.',
-      link: 'https://www.youtube.com/watch?v=7N2v0bpNFKA',
-    },
-    {
-      referencia:
-        'Godoy, J. (2009a). Cuadernos del diseño básico. Contraste. Universidad de Santander. ',
-      link: 'https://issuu.com/azulcero/docs/contraste/4',
-    },
-    {
-      referencia:
-        'Godoy, J. (2009b). Cuadernos del diseño básico. La radiación. Universidad de Santander. ',
-      link: 'https://issuu.com/azulcero/docs/la_radiacion/2',
-    },
-    {
-      referencia:
-        'Hurtado, M. (2019). Qué tipos de bocetos se utilizan en diseño gráfico. Foro Alfa. ',
-      link:
-        'https://foroalfa.org/articulos/pdf/que-tipos-de-bocetos-se-utilizan-en-diseno-grafico.pdf',
-    },
-    {
-      referencia: 'Lexico. (s. f.). Color. Lexico.com.',
-      link: 'https://www.lexico.com/es/definicion/color',
-    },
-    {
-      referencia:
-        'Lozano, I (s. f.). Los 5 elementos clave para crear un mensaje efectivo. ',
-      link:
-        'https://blog.locutora.org/los-5-elementos-clave-para-crear-un-mensaje-efectivo/',
-    },
-    {
-      referencia:
-        'Ruiz, L. (2019). El padre del diseño gráfico moderno, Paul Rand. Enfoque Gaussiano. ',
-      link:
-        'https://www.enfoquegaussiano.com/el-padre-del-diseno-grafico-moderno-paul-rand/',
-    },
-    {
-      referencia: 'Uriarte, J. (2020). Paleolítico. Caracteristicas.co.',
-      link: 'https://www.caracteristicas.co/paleolitico/',
-    },
-    {
-      referencia:
-        'Whelan, B. (1994). La armonía en el color. Nuevas tendencias. Guía para la combinación creativa de colores. ',
-      link: '',
-    },
-    {
-      referencia: 'WikiArt. (s. f.). Cassandre.',
-      link: 'https://www.wikiart.org/es/cassandre',
-    },
-    {
-      referencia: 'Wikipedia. (2021). Walter Gropius.',
-      link: 'https://es.wikipedia.org/wiki/Walter_Gropius',
-    },
-    {
-      referencia:
-        'Wong, W. (1991). Fundamentos del diseño bi- y tri-dimensional. Editorial Gustavo Gili. ',
-      link:
-        'https://centroculturalhaedo.edu.ar/cch/actualizacion_permanente/Fundamentos%20del%20Diseno%20Bidimensional%20y%20tridimensional,%20Wucius%20Wong.pdf',
+        'MarketHax | Ecommerce México. (2020). <i>Qué es hosting y dominio de una página web para principiantes.</i> [Video]. YouTube.',
+      tipo: 'Video',
+      link: 'https://www.youtube.com/watch?v=VzXbegQtXVs',
     },
   ],
   glosario: [
     {
-      termino: 'Axial',
+      termino: 'CSS',
       significado:
-        'término utilizado para hacer referencia a la simetría alrededor del eje.',
+        'hoja de estilos en cascada o lenguaje que ayuda a definir la apariencia del documento escrito. ',
     },
     {
-      termino: 'Escorzo',
+      termino: 'Dominio',
       significado:
-        'técnica que permite percibir una sensación de profundidad en una obra.',
+        'nombre único de la página web, con el que nadie más a nivel mundial podrá utilizar el mismo nombre.',
     },
     {
-      termino: '<i>Feedback</i>',
+      termino: '<i>Hosting</i>',
       significado:
-        'término que en inglés que significa retroalimentación, y se entiende como la respuesta u opinión que da un interlocutor a partir de la información recibida por parte del emisor. ',
+        'servidor donde se permite el cargue de la aplicación web desarrollada para un fin u objetivo de desarrollo de <i>software</i>.',
     },
     {
-      termino: 'Gárgola',
+      termino: 'Maquetación',
       significado:
-        'son figuras mitológicas, en forma de animales o humanos, utilizadas en iglesias y catedrales como objetos decorativos o también para drenajes de agua, un estilo artístico de la Edad Media, especialmente en el arte gótico. ',
+        'distribución de la página web relacionada con los estilos, como colores, fuentes, tamaños, letras y demás elementos. ',
     },
     {
-      termino: 'Helenista',
+      termino: 'Node.JS',
       significado:
-        'persona instruida en la lengua, cultura y literatura griega.',
+        'entorno de ejecución para JavaScript que ayuda a permanecer el código ligero y eficiente en la superficie del uso intensivo de los datos en tiempo real.',
     },
     {
-      termino: 'Ortogonal',
+      termino: 'React.JS',
       significado:
-        'se emplea para hacer referencia a que está en ángulo recto, ángulo de 90º. ',
-    },
-    {
-      termino: '<i>Polis</i>',
-      significado:
-        'hace referencia a las ciudades-estado en la Antigua Grecia, territorios independientes, gobernados de manera autónoma.',
-    },
-    {
-      termino: 'Rosetta',
-      significado:
-        '“La piedra Rosetta es una estela incompleta de granodiorita gris y rosa que data del 196 a. C., que presenta un decreto sacerdotal sobre el rey Ptolomeo V de Egipto. El texto está dividido en tres versiones diferentes: jeroglíficos, escritura demótica y griego, cosa que ayudó inmensamente a descifrar por fin los jeroglíficos egipcios” (Cartwright, 2014).',
-    },
-    {
-      termino: 'Simetría',
-      significado:
-        'Según el diccionario de la Real Academia Española – RAE (s. f.), “es correspondencia exacta en forma, tamaño y posición de las partes de un todo”.',
-    },
-    {
-      termino: '<i>Target</i>',
-      significado:
-        'término inglés que no forma parte del diccionario de la RAE, se emplea en al campo de la publicidad para designar al público objetivo o nicho de mercado al cual se destinará una campaña, producto o servicio. ',
+        'librería de JavaScript de código abierto que se enfoca a la visualización.',
     },
   ],
-  complementario: [
+  referencias: [
     {
-      texto:
-        'Wong, W. (1991). Fundamentos del diseño bi- y tri-dimensional. Editorial Gustavo Gili. ',
-      tipo: 'PDF',
-      descarga: '/downloads/fundamentos.pdf',
+      referencia: 'Node.js. (2022). Node.js.',
+      link: 'https://nodejs.org/en',
     },
     {
-      texto:
-        'BM Imaginería Taller de Arte. (2013). Historia del Arte Universal Cap 01 [Video]. YouTube. ',
-      tipo: 'Video',
-      link: 'https://www.youtube.com/watch?v=I7gIIby02aw&t=8s',
+      referencia:
+        'Pickupimage.com. (2022). Free High Resolution Pictures and High Quality Free images.',
+      link: 'https://pickupimage.com',
     },
     {
-      texto:
-        'GCFAprendeLibre. (2019). Fundamentos del diseño: elementos básicos | Conceptos básicos de diseño gráfico [Video]. YouTube. ',
-      tipo: 'Video',
-      link: 'https://www.youtube.com/watch?v=7N2v0bpNFKA',
+      referencia:
+        'React. (2022). A JavaScript library for building user interfaces.',
+      link: 'https://reactjs.org',
     },
     {
-      texto:
-        'Juárez, A. (2020). Conceptos de diseño: LA FORMA – Fundamentos del diseño animado (Basados en Wucius',
-      tipo: 'Video',
-      link: 'https://www.youtube.com/watch?v=dstsb4-2fCc',
+      referencia:
+        'Skitterphoto. (2022). Un lugar para encontrar, mostrar y compartir imágenes de dominio público.',
+      link: 'https://skitterphoto.com',
     },
     {
-      texto:
-        'GCFAprendeLibre. (2019). Teoría del color – Conceptos básicos del diseño gráfico [Video].',
-      tipo: 'Video',
-      link: 'https://www.youtube.com/watch?v=cGglJKvpCEs',
+      referencia: 'StockSnap. (2022). Beautiful Free Stock Photos.',
+      link: 'https://stocksnap.io',
     },
     {
-      texto:
-        'Tinux V A. (2019). Teoría del color: aditivo, sustractivo y la ley de los complementarios [Video]. YouTube.',
-      tipo: 'Video',
-      link: 'https://www.youtube.com/watch?v=UwTicavr21s',
+      referencia:
+        'Unsplash. (2022). 500+ Scrum Pictures | Download Free Images on Unsplash.',
+      link: 'https://unsplash.com/s/photos/scrum',
     },
     {
-      texto:
-        'Marco Creativo. (2016). Psicología del color ¿Qué transmiten los colores? [Video]. YouTube. ',
-      tipo: 'Video',
-      link: 'https://www.youtube.com/watch?v=X8kbrAzV6BM',
+      referencia: 'Visual Studio Code. (2022). Code Editing. Redefined.',
+      link: 'https://code.visualstudio.com',
     },
   ],
-  creditos: {
-    liderEquipo: [
-      {
-        nombre: 'Maria Camila Garcia Santamaria',
-        cargo: 'Líder del equipo',
-        centro: 'Dirección General',
-      },
-    ],
-    contenidoInstruccional: [
-      {
-        nombre: 'Rafael Neftalí Lizcano Reyes',
-        cargo: 'Asesor metodológico y pedagógico',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'Guillermo Eduardo González Tarazona',
-        cargo: 'Instructor',
-        centro:
-          ' Centro para la Industria de la Comunicación Gráfica - Regional Distrito Capital ',
-      },
-      {
-        nombre: 'Gloria Amparo López escudero',
-        cargo: 'Diseñadora y Evaluadora Instruccional ',
-        centro: 'Centro de Gestión Industrial - Regional Distrito Capital ',
-      },
-      {
-        nombre: 'Ana Catalina Córdoba Sus',
-        cargo: 'Revisora metodológica y pedagógica',
-        centro:
-          'Centro para la Industria de la Comunicación Gráfica - Regional Distrito Capital ',
-      },
-      {
-        nombre: 'Darío González',
-        cargo: 'Corrección de estilo',
-        centro: 'Centro Agropecuario La Granja - Regional Tolima ',
-      },
-    ],
-    desarrolloProducto: [
-      {
-        nombre: 'Francisco José Lizcano Reyes',
-        cargo: 'Responsable del equipo',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'Leyson Fabian Castaño Perez',
-        cargo: 'Soporte organizacional',
-        centro: 'Centro de Comercio y Servicios Regional Tolima',
-      },
-      {
-        nombre: ['Yuly Andrea Rey Quiñonez'],
-        cargo: 'Diseño web',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'Camilo Andres Bolaño Rey',
-        cargo: 'Desarrollo front-end',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'Andres Mauricio Santaella Ochoa',
-        cargo: 'Soporte front-end',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'Zuleidy Maria Ruiz Torres',
-        cargo: 'Producción audiovisual',
-        centro: 'Centro de Comercio y Servicios Regional Tolima',
-      },
-      {
-        nombre: 'Wilson Andrés Arenales Caceres',
-        cargo: 'Producción audiovisual',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'Gilberto Junior Rodriguez Rodriguez',
-        cargo: 'Producción audiovisual',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'María Carolina Tamayo López',
-        cargo: 'Producción audiovisual',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'Adriana Marcela Suárez Eljure',
-        cargo: 'Producción audiovisual',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'Carmen Alicia Martínez Torres',
-        cargo: 'Producción audiovisual',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'José Jaime Luis Tang Pinzón ',
-        cargo: 'Producción audiovisual',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'Laura Gisselle Murcia Pardo',
-        cargo: 'Producción audiovisual',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'Daniela Muñoz Bedoya',
-        cargo: 'Producción audiovisual',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'Lady Adriana Ariza Luque',
-        cargo: 'Producción audiovisual',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'Oleg Litvin',
-        cargo: 'Producción audiovisual',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-      {
-        nombre: 'Jhana Johanna Bustillo Ardila',
-        cargo: 'Validación de diseño y contenido',
-        centro:
-          'Centro Industrial del Diseño y la Manufactura Regional Santander',
-      },
-    ],
-    gestoresRepositorio: [
-      {
-        nombre: 'Milady Tatiana Villamil Castellanos',
-        cargo: 'Validación y vinculación en plataforma LMS',
-        centro: 'Centro de Comercio y Servicios Regional Tolima',
-      },
-    ],
+  creditos: [
+    {
+      titulo: 'ECOSISTEMA DE RECURSOS EDUCATIVOS DIGITALES',
+      autores: [
+        {
+          nombre: 'Claudia Patricia Aristizabal',
+          cargo: 'Responsable del Ecosistema',
+          centro: 'Dirección General',
+        },
+        {
+          nombre: 'Rafael Neftalí Lizcano Reyes',
+          cargo: 'Responsable de Línea de Producción',
+          centro:
+            'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+        },
+      ],
+    },
+    {
+      titulo: 'CONTENIDO INSTRUCCIONAL',
+      autores: [
+        {
+          nombre: 'Luis Eyder Ortiz',
+          cargo: 'Experto Temático',
+          centro:
+            'Regional Cauca - Centro de Teleinformática y Producción Industrial',
+        },
+        {
+          nombre: 'Gustavo Santis Mancipe',
+          cargo: 'Diseñador Instruccional',
+          centro: 'Regional Distrito Capital - Centro de Gestión Industrial',
+        },
+        {
+          nombre: 'Andrés Felipe Velandia Espitia',
+          cargo: 'Asesor Metodológico',
+          centro: 'Regional Distrito Capital - Centro de Diseño y Metrología',
+        },
+        {
+          nombre: 'José Gabriel Ortiz Abella',
+          cargo: 'Corrector de estilo',
+          centro: 'Regional Distrito Capital - Centro de Diseño y Metrología',
+        },
+        {
+          nombre: 'Paola Alexandra Moya',
+          cargo: 'Diseñador Instruccional',
+          centro:
+            'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+        },
+      ],
+    },
+    {
+      titulo: 'DISEÑO Y DESARROLLO DE RECURSOS EDUCATIVOS DIGITALES',
+      autores: [
+        {
+          nombre: 'Yerson Fabian Zarate Saavedra',
+          cargo: 'Diseñador de Contenidos Digitales',
+          centro:
+            'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+        },
+        {
+          nombre: 'Edward Leonardo Pico Cabra',
+          cargo: 'Desarrollador Fullstack',
+          centro:
+            'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+        },
+        {
+          nombre: 'Daniela Muñoz Bedoya',
+          cargo: 'Animador y Productor Multimedia',
+          centro:
+            'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+        },
+        {
+          nombre: 'Daniela Muñoz Bedoya',
+          cargo: 'Locución',
+          centro:
+            'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+        },
+        {
+          nombre: 'Emilsen Alfonso Bautista',
+          cargo: 'Actividad Didáctica',
+          centro:
+            'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+        },
+      ],
+    },
+    {
+      titulo: 'VALIDACIÓN RECURSO EDUCATIVO DIGITAL',
+      autores: [
+        {
+          nombre: 'Zuleidy María Ruiz Torres',
+          cargo: 'Validador de Recursos Educativos Digitales',
+          centro:
+            'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+        },
+        {
+          nombre: 'Luis Gabriel Urueta Alvarez',
+          cargo: 'Validador de Recursos Educativos Digitales',
+          centro:
+            'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+        },
+        {
+          nombre: 'Daniel Ricardo Mutis Gómez',
+          cargo: 'Evaluador para contenidos inclusivos y accesibles',
+          centro:
+            'Centro Industrial del Diseño y la Manufactura - Regional Santander',
+        },
+      ],
+    },
+  ],
+  creditosAdicionales: {
+    imagenes:
+      'Fotografías y vectores tomados de <a href="https://www.freepik.es/" target="_blank">www.freepik.es</a>, <a href="https://www.shutterstock.com/" target="_blank">www.shutterstock.com</a>, <a href="https://unsplash.com/" target="_blank">unsplash.com </a>y <a href="https://www.flaticon.com/" target="_blank">www.flaticon.com</a>',
+    creativeCommons:
+      'Licencia creative commons CC BY-NC-SA<br><a href="https://creativecommons.org/licenses/by-nc-sa/2.0/" target="_blank">ver licencia</a>',
   },
   // creditosInicio: [
   //   {

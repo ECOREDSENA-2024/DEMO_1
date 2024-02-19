@@ -5,26 +5,24 @@
   
     .titulo-principal.color-acento-contenido
       .titulo-principal__numero
-        span.text-white
+        span
           i.fas.fa-info
       h1 Introducción
     
-    p.mb-5 Apreciado aprendiz, sea bienvenido a este momento de aprendizaje orientado a la historia del diseño gráfico y sus elementos más importantes. Antes de empezar, se sugiere revisar el siguiente video para identificar el contexto de aprendizaje:
-    figure.mb-5
-      .video
-        iframe(width="560" height="315" src="https://www.youtube.com/embed/NajohPZvsBk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
-    p.mb-0 Para la elaboración de este componente, se abordaron varios autores conocidos en <b>conceptos básicos e historia del diseño</b>, de quienes se han citado y referenciado conceptos y ejemplos para los fines educativos de esta materia, en el entendido de que el conocimiento es social y, por lo tanto, es para ser usado por quienes necesitan adquirirlo. Se espera que este documento sea útil para todos aquellos, aprendices y lectores en general, que estén interesados en acercarse a asuntos básicos del <b>desarrollo de medios gráficos visuales</b>.
-
-
+    .row.bg1.align-items-center.py-4.pb-5
+      .col-lg-12.col-12.px-lg-5.px-4
+        p(data-aos="fade-down") Para realizar la interfaz de usuario de una aplicación web con React.JS es importante conocer su importancia, en cuanto a la definición y posicionamiento de los elementos de la interfaz del sitio web, así como la implementación de las interacciones entre todos estos elementos. A continuación se presenta un video que introduce a este componente formativo.
+        .row.justify-content-center.align-items-center.mt-5           
+          .col-lg-12(data-aos="fade-left")     
+            figure
+              .video
+                iframe(width="560" height="315" src="https://www.youtube.com/embed/7mg0N0LwRtc?si=r6NRDNZi2piTTbVH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen) 
+              figcaption Video. Construcción interfaz front-end y despliegue con React.JS
 </template>
 
 <script>
-import BannerInterno from '../components/BannerInterno.vue'
 export default {
   name: 'Introduccion',
-  components: {
-    BannerInterno,
-  },
   data: () => ({
     // variables de vue
   }),
