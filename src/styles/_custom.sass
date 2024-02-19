@@ -1,19 +1,76 @@
-.banner-principal-decorativo
-  &-1
-    animation: float1 3.5s ease-in-out infinite alternate
-    position: absolute
-    top: 40%
-    right: 50%
-  &-2
-    animation: float1 2.8s ease-in-out infinite alternate
-    position: absolute
-    top: 51%
-    right: 30%
+.imagen-adornos-flotantes
+  position: relative
+  &__img
+    img
+      position: absolute
+      z-index: 99
+      animation: float 3s ease-in-out infinite alternate
 
-
-@keyframes float1
+@keyframes float
   0%
-    transform: translateY(20px)
+    transform: translateY(10px)
 
   100%
     transform: translateY(0px)
+
+    
+.tarjeta-h
+  .tarjeta
+    min-height: 476px !important
+  .horizontal-scroll
+    align-items: stretch !important
+.fa-chevron-left:before
+  content: url(../assets/curso/izquierda.svg) !important
+  width: 10px !important
+.fa-chevron-right:before
+  content: url(../assets/curso/derecha.svg) !important
+  width: 2px !important
+.slyder-f__btn
+  z-index: 99
+  width: 5% !important
+.texto-adorno
+  width: fit-content
+  position: relative
+  &:before
+    content: url(../assets/curso/13.svg)
+    position: absolute
+    top: -40%
+    right: -10%
+    width: 46px
+.tarjetas-text
+  position: relative
+  overflow: hidden
+  &__contenido
+    width: 100%
+    transition: bottom 0.3s ease-in-out
+    border-radius: 10px
+    position: absolute
+    background-color: #F6F6F6 !important
+    bottom: -28%
+    p
+      transition: opacity 0.3s ease-in-out
+      opacity: 0
+  &:hover
+    .tarjetas-text__contenido
+      bottom: 0
+      p
+        opacity: 1
+.slyder-d__content__card
+  h3 
+    font-size: 18px
+  @media (max-width: $bp-max-md)
+    font-size: 10px
+  @media (max-width: $bp-max-sm)
+    font-size: 1em
+.tb
+  h1, h2, h3, h5, h5, h6, p, i, span
+    color: $color-sistema-texto !important
+    
+.tarjeta-slide.arriba:hover .tarjeta-slide__img 
+    transform: translate(0, 0%)
+.tarjeta-slide.abajo:hover .tarjeta-slide__img 
+    transform: translate(0, 0%)
+.tarjeta-slide.arriba, .tarjeta-slide__img 
+    top: 100
+.tarjeta-slide.abajo, .tarjeta-slide__img 
+    transform: translate(0, -100%)
